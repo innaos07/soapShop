@@ -1,7 +1,14 @@
 <template>
   <div>
-      <nav-bar></nav-bar>
-      <router-view></router-view>
+    <header class="header">
+      <div class="header_container container-fluid container-md">
+        <nav-bar></nav-bar>
+      </div>
+    </header>
+
+    <main>
+        <router-view></router-view>
+    </main>
   </div>
 </template>
 
@@ -16,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
-  
+  .header {
+    background-color: #caccde;
+  }
 
 </style>

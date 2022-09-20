@@ -1,6 +1,6 @@
 <template>
-  <div >
-     payment
+  <div class="container container-md container-lg">
+    pllll
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
