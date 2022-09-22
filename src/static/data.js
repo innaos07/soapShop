@@ -3,7 +3,7 @@ export default [
               
                     id: Math.random().toString(36).substring(6),
                     name: 'Natural Organic Soap',
-                    description: "Natural Organic Skin Lightening Cleaning Plant Handmade Lavender Roses Dried Petals Flowers Foam Toilet Soap",
+                    description: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
                     price: '100',
                     quantity: 1, 
                     tags: 'handmade',
@@ -13,7 +13,7 @@ export default [
               
                     id: Math.random().toString(36).substring(6),
                     name: 'Handmade Soap Rice Milk',
-                    description: 'Thailand Rice Milk Soap Original Wholesale Handmade Soap Rice Milk Whitening Goat Milk Soap for Whitening Oil Control',
+                    description: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",                    
                     price: '150', 
                     quantity: 1, 
                     tags: 'handmade',
@@ -24,7 +24,7 @@ export default [
               
                     id: Math.random().toString(36).substring(6),
                     name: 'Baby Soap Rice Milk',
-                    description: 'Hot Sale Factory Manufacture Toilet Shower Peach Handmade Soap for Butt',
+                    description: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
                     price: '150', 
                     quantity: 1, 
                     tags: 'baby',
@@ -34,7 +34,7 @@ export default [
                   { 
                     id: Math.random().toString(36).substring(6),
                     name: 'Box Soaps',
-                    description: 'OEM Wholesale Natural Handmade Essential Oil Beauty Lavender Rose Soap Flower Series Set',
+                    description: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
                     price: '150', 
                     quantity: 1, 
                     tags: 'box',

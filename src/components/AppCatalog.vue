@@ -34,16 +34,21 @@
     </app-modal>
 
      
-
-      <div class="catalog__list">
-        <app-catalog-item 
-            class=""
-            v-for="product in sortedAndSearchCatalog"
-            :key="product.id"
-            :product="product"
-            @addProduct="store.addCart"
-        />   
+    <section class="catalog">
+      <div class="catalog__wrapper container container-md container-lg">
+        <div class="catalog__body row">
+          <app-catalog-item 
+              class=""
+              v-for="product in sortedAndSearchCatalog"
+              :key="product.id"
+              :product="product"
+              @addProduct="store.addCart"
+          />   
       </div>
+
+      </div>
+      
+    </section>
   </div>
 </template>
 
@@ -99,11 +104,11 @@ export default {
     justify-content: space-between;
 
     margin-bottom: 20px;
-
   }
-  .catalog__list {
-    display: flex;
-    flex-wrap: wrap;
+
+  .catalog__body {
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin: 0 -15px;
   }
 }

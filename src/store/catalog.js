@@ -37,6 +37,9 @@ export const useCatalogStore = defineStore('catalog', {
                 return state.products.filter(product => product.tags.toLowerCase().includes(state.statusFilter.toLowerCase()));
             }
         },
+        productItem(state) {
+           return (productId) => state.products.filter(product => product.id == productId)
+        },
         // searchCatalog(state) {
 
         // }

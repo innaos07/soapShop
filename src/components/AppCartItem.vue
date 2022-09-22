@@ -8,7 +8,7 @@
           @click="$emit('decrement',index)">
           -
         </span>
-        <p>{{cart_item.quantity}}</p>
+        <span>{{cart_item.quantity}}</span>
         <span @click="$emit ('increment', index)">+</span>
       </div>
       <app-button   
@@ -54,8 +54,5 @@ export default {
     border: 1px solid #e5e5e5;
     border-radius: 12px;
   }
-  p {
-    margin: 0;
-    padding: 0;
-  }
+
 </style>

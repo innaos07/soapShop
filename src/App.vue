@@ -14,6 +14,7 @@
 
 <script>
 import NavBar from './components/NavBar';
+
 export default {
   name: 'App',
   components: {
@@ -23,6 +24,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
+@import './assets/styles/index.scss';
+
   .header {
     background-color: #caccde;
   }

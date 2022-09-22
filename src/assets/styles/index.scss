@@ -1,5 +1,28 @@
+@import 'variables';
+@import "./fontawesome/scss/fontawesome.scss";
+// @import "./fontawesome/scss/solid.scss";
+// @import "./fontawesome/scss/brands.scss";
+// @import "./fontawesome/scss/duotone.scss";
+// @import "./fontawesome/scss/_duotone-icons.scss";
+
+img {
+    width: 100%;
+    height: auto;
+}
+
 .wrapper {
-    padding-left: 30px; 
-    padding-right: 30px; 
+    padding-left: 5%; 
+    padding-right: 5%;
+     
+    @media (min-width: $xl-width) {
+        padding-left: 125px; 
+        padding-right: 125px; 
+    }
+}
+
+.title {
+      text-align: center;
+      font-size: 24px;
+      line-height: 30px;
 }
 

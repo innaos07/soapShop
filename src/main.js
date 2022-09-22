@@ -3,10 +3,7 @@ import App from './App.vue'
 import router from './router';
 import components from './components/UI';
 import { createPinia } from 'pinia';
-import './assets/styles/index.scss';
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // console.log(components)
 
