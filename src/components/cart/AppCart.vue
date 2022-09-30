@@ -1,7 +1,6 @@
 <template>
-  <div class="card"> 
-      <h1>basket</h1>
-      <h2>col:{{store.cart.length}}</h2>
+  <div class="cart d-flex flex-column"> 
+      <!-- <h2>col:{{store.cart.length}}</h2> -->
       <app-cart-item 
         v-for="(item, index) in cart_data"
         :cart_item="item"
@@ -10,7 +9,7 @@
         @increment = "store.increment(item.id)"
         @decrement = "store.decrement(item.id)"
       />
-      <div >Total:  {{totalCost}} </div>
+      <div class="cart__total">Total:  {{totalCost}} </div>
       <app-button 
         @click="$router.push('/payment')">
         payment
@@ -19,7 +18,7 @@
 </template>
 
 <script>
-  import {useCatalogStore} from '../store/catalog';
+  import {useCatalogStore} from '../../store/catalog';
   import AppCartItem from './AppCartItem.vue';
   import {computed} from 'vue';
 
@@ -50,8 +49,16 @@ export default {
 }
 </script>
 
-<style >
- .card {
+<style  lang="scss" scoped>
+  @import '../../assets/styles/variables.scss';
+ .cart {
+
+  .cart__total {
+    margin: 10px 0;
+    font-style: 24px;
+    line-height: 30px;
+    font-weight: 600;
+  }
   
 }
  

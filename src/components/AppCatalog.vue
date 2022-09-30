@@ -24,14 +24,8 @@
         Box
       </div>
     </div>
-    <app-modal
-      :show="isDialogVisible"
-      @close="store.showBasketModal">
-        <app-cart 
-          v-if="cart.length"
-          :cart_data="cart"/>
-        <div  v-else>basket is empty... </div>
-    </app-modal>
+
+    <app-cart-modal></app-cart-modal>
 
      
     <section class="catalog">
@@ -55,45 +49,29 @@
 <script>
   import {useCatalogStore} from '../store/catalog';
   import AppCatalogItem  from './AppCatalogItem.vue';
-  import AppCart  from './AppCart.vue';
+  import AppCartModal  from './modals/AppCartModal.vue';
   import {computed} from 'vue';
-
 
 export default {
   components: {
     AppCatalogItem,
-    AppCart,
+    AppCartModal,
   },
-  data() {
-    return {
-    }
-  },
-  methods: {
- 
-  },
+
   setup() {
 
     const store = useCatalogStore();
-    // const products = computed(() => store.products);
-    const isDialogVisible = computed(() => store.isDialogVisible);
-    const cart = computed(() => store.cart);
     const sortedAndSearchCatalog = computed(() => store.sortedAndSearchCatalog);
     const searchProduct = computed(() => store.searchProduct);  
 
     return{
       store,
-      // products,
-      isDialogVisible,
-      cart,
       sortedAndSearchCatalog,
       searchProduct
     }
   },
-  mounted() {
-    // this.store.fetchUsers()
-  }
- 
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -102,7 +80,6 @@ export default {
   .catalog__filter {
     display: flex;
     justify-content: space-between;
-
     margin-bottom: 20px;
   }
 

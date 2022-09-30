@@ -22,7 +22,6 @@
         </div>
       </div>
     </div>
-    
   </section>
 </template>
 
@@ -44,7 +43,6 @@ export default {
     return {
       store,
       bestProducts
-  
     }
   },
  
@@ -56,47 +54,45 @@ export default {
 
   .best-products {
 
-  .best-products__body {
-    padding-top: 30px;
-    padding-bottom: 10px;
-  }
-
-  .best-products__btn {
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 20px;
-    margin-left: auto;
-    color: #4f537d;
-    cursor: pointer;
-    transition: all 0.5s ease;
-
-    &:hover {
-      color: #3b3e5e;
-      font-weight: 500;
+    .best-products__body {
+      padding-top: 30px;
+      padding-bottom: 10px;
     }
-  }
 
-  .best-products__title {
-    font-size: 35px;
-    line-height: 50px;
-    font-weight: 400;
-    margin-bottom: 20px;
+    .best-products__btn {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 20px;
+      margin-left: auto;
+      color: #4f537d;
+      cursor: pointer;
+      transition: all 0.5s ease;
 
-    @media (max-width: $lg-width) { 
-      font-size: 30px;
-      line-height: 40px;
-      margin-bottom: 30px;
+      &:hover {
+        color: #3b3e5e;
+        font-weight: 500;
+      }
     }
-  }
 
-  .best-products__descriptions {
-    text-align: center;
-    font-size: 20px;
-    line-height: 30px;
-    margin-bottom: 40px;
-  }
+    .best-products__title {
+      font-size: 35px;
+      line-height: 50px;
+      font-weight: 400;
+      margin-bottom: 20px;
 
+      @media (max-width: $lg-width) { 
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 30px;
+      }
+    }
 
+    .best-products__descriptions {
+      text-align: center;
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 50px;
+    }
 }
 
 </style>
