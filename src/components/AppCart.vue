@@ -7,8 +7,8 @@
         :cart_item="item"
         :key="item.id"
         @deleteFromCard="store.deleteFromCard(index)"
-        @increment = "store.increment(index)"
-        @decrement = "store.decrement(index)"
+        @increment = "store.increment(item.id)"
+        @decrement = "store.decrement(item.id)"
       />
       <div >Total:  {{totalCost}} </div>
       <app-button 

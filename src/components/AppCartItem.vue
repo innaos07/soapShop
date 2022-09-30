@@ -5,11 +5,11 @@
       <p>{{cart_item.price}}</p>
       <div class="card__counter">
         <span 
-          @click="$emit('decrement',index)">
+          @click="$emit('decrement',cart_item.id)">
           -
         </span>
         <span>{{cart_item.quantity}}</span>
-        <span @click="$emit ('increment', index)">+</span>
+        <span @click="$emit ('increment', cart_item.id)">+</span>
       </div>
       <app-button   
         @click="$emit('deleteFromCard', index)">

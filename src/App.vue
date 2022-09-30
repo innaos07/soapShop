@@ -28,6 +28,8 @@ export default {
 @import 'bootstrap-vue/dist/bootstrap-vue.css';
 @import './assets/styles/index.scss';
 
+
+
   .header {
     background-color: #caccde;
   }

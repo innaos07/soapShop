@@ -13,6 +13,7 @@ export const useCatalogStore = defineStore('catalog', {
             cart: [],
             statusFilter: 'ALL',
             searchProduct: '',
+            isShowIngredients: false,
        }
     },
     getters: {
@@ -40,9 +41,28 @@ export const useCatalogStore = defineStore('catalog', {
         productItem(state) {
            return (productId) => state.products.filter(product => product.id == productId)
         },
-        // searchCatalog(state) {
 
-        // }
+        relatedProducts(state) {
+            return (productId) => {
+                let tags;
+                    state.products.filter ((item) => {
+                        if(item.id === productId) {
+                            tags = item.tags;
+                            console.log(tags)
+                    }    
+                })
+                console.log('tags', tags)
+                return state.products.filter((product) => product.tags === tags).slice(0,3)
+                
+            
+            }
+        },
+
+        bestProducts(state) {
+            console.log()
+            return state.products.filter( item=> item.rating === 5)
+
+        }
 
     },
     actions: {
@@ -64,23 +84,30 @@ export const useCatalogStore = defineStore('catalog', {
             if(this.cart.length){
                 let itemFound = this.cart.find((item)=> item.id===product.id)
                 itemFound ? itemFound.quantity +=1 :  this.cart.push(product)
-              
             } else {
                 this.cart.push(product)
             }
             this.isDialogVisible = true;
         },
+
+
         deleteFromCard(index) {
             console.log(index)
             this.cart.splice(index, 1)
         },
-        increment(index) {
-            this.cart[index].quantity +=1
+        increment(id) {
+            this.cart.map((item) => {
+                if(item.id == id) {
+                    item.quantity +=1
+                }
+            })
         },
-        decrement(index) {
-            if(this.cart[index].quantity > 1){
-                this.cart[index].quantity -=1;
-            }
+        decrement(id) {
+              this.cart.map((item) => {
+                if(item.id == id) {
+                    item.quantity > 1 ? item.quantity -=1 : null;
+                }
+            })
         },
         changeStatusFilter(filter) {
             this.statusFilter = filter;
@@ -88,6 +115,35 @@ export const useCatalogStore = defineStore('catalog', {
         updateSearchInput(event) {
             this.searchProduct = event.target.value;
         },
+        incrementProduct(id) {
+            this.products.map((item) => {
+                if(item.id == id) {
+                    item.quantity +=1
+                }
+            })
+        },
+        decrementProduct(id) {
+              this.products.map((item) => {
+                if(item.id == id) {
+                    item.quantity > 1 ? item.quantity -=1 : null;
+                }
+            })
+        },
+        // addCartProduct(product) {
+        //      if(this.cart.length){
+        //         let itemFound = this.cart.find((item)=> item.id===product.id)
+        //         console.log(itemFound.quantity)
+        //         itemFound ? itemFound.quantity = product.quantity :  this.cart.push(product)
+              
+        //     } else {
+        //         this.cart.push(product)
+        //     }
+        //     this.isDialogVisible = true;
+        // },
+
+        showIngredients() {
+            this.isShowIngredients = !this.isShowIngredients;
+        }
 
 
     },
