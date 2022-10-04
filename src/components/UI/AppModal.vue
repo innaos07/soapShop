@@ -17,16 +17,15 @@
 </template>
 
 <script>
-
-export default {
-  name: 'app-modal',
-  props: {
-    show: {
-      type: Boolean,
-      default: false,
-    }
-  },
-}
+  export default {
+    name: 'app-modal',
+    props: {
+      show: {
+        type: Boolean,
+        default: false,
+      }
+    },
+  }
 </script>
 
 <style  lang="scss" scoped>
@@ -46,7 +45,6 @@ export default {
   .app-modal {
     position: relative;
     margin: auto;
-    // min-width:  300px; 
     padding-top: 50px;
     padding-left: 30px;
     padding-right: 30px;

@@ -55,9 +55,9 @@ export default {
 
   .cart__total {
     margin: 10px 0;
-    font-style: 24px;
+    font-size: 18px;
     line-height: 30px;
-    font-weight: 600;
+    // font-weight: 600;
   }
   
 }

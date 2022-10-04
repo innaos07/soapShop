@@ -1,6 +1,6 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
 import AppMain from '../page/AppMain.vue';
-import AppCatalog from '../components/AppCatalog.vue';
+import AppCatalog from '../page/AppCatalog.vue';
 import AppProductCard from '../page/AppProductCard.vue';
 
 import AppAbout from '../components/AppAbout.vue';

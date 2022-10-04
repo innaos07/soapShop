@@ -3,7 +3,7 @@
     <div class="promo__wrapper container container-md container-lg">
       <div class="promo__body row">
         <div class="promo__info promo__info--left col col-md-8">
-          <img  class="promo__image promo__image--left" src="../../static/image/appsoap.jpeg" width="480" height="400">
+          <img  class="promo__image promo__image--left" src="../../assets/image/appsoap.jpeg" width="480" height="400">
           <p  
             class="promo__description"
             @click="$router.push('/catalog')">
@@ -12,7 +12,7 @@
 
         <div class="promo__info col col-md-4">
           <div>
-            <img class="promo__image promo__image--right" src="../../static/image/appsoap.jpeg" width="220" height="150">
+            <img class="promo__image promo__image--right" src="../../assets/image/appsoap.jpeg" width="220" height="150">
             <p 
               class="promo__description"
               @click="$router.push('/catalog')">
@@ -20,7 +20,7 @@
             </p>
           </div>
           <div>
-            <img class="promo__image promo__image--right" src="../../static/image/appsoap.jpeg" width="220" height="150">
+            <img class="promo__image promo__image--right" src="../../assets/image/appsoap.jpeg" width="220" height="150">
             <p 
               class="promo__description"
               @click="$router.push('/catalog')">

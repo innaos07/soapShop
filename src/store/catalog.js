@@ -14,6 +14,7 @@ export const useCatalogStore = defineStore('catalog', {
             statusFilter: 'ALL',
             searchProduct: '',
             isShowIngredients: false,
+            isShowSortList: false,
        }
     },
     getters: {
@@ -110,6 +111,7 @@ export const useCatalogStore = defineStore('catalog', {
             })
         },
         changeStatusFilter(filter) {
+            console.log(filter)
             this.statusFilter = filter;
         },
         updateSearchInput(event) {
@@ -143,6 +145,10 @@ export const useCatalogStore = defineStore('catalog', {
 
         showIngredients() {
             this.isShowIngredients = !this.isShowIngredients;
+        },
+
+        showSortList() {
+            this.isShowSortList = !this.isShowSortList;
         }
 
 

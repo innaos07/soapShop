@@ -31,7 +31,7 @@ export default {
 
 
   .header {
-    background-color: #caccde;
+    background-color: #4b4e6c;
   }
 
 </style>
