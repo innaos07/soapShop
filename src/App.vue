@@ -27,9 +27,6 @@ export default {
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'bootstrap-vue/dist/bootstrap-vue.css';
 @import './assets/styles/index.scss';
-
-
-
   .header {
     background-color: #4b4e6c;
   }

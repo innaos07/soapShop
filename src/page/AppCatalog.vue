@@ -1,33 +1,9 @@
 <template>
   <div class="catalog-page">
-
-<!--     <div style="display:flex; justify-content: space-between;">
-      <h1>catalog</h1>
-      <app-button @click="store.showBasketModal"> open</app-button>
-    </div>
-    <input :value="searchProduct" @input="store.updateSearchInput"/>
-    <div class="catalog__filter">
-      <div 
-        @click="store.changeStatusFilter('ALL')">
-        ALL
-      </div>
-      <div 
-        @click="store.changeStatusFilter('handmade')">
-        Handmade soap
-      </div>
-      <div 
-        @click="store.changeStatusFilter('baby')">
-        Baby soap
-      </div>
-      <div 
-        @click="store.changeStatusFilter('box')">
-        Box
-      </div>
-    </div> -->
     <app-catalog-search></app-catalog-search>
-
     <app-cart-modal></app-cart-modal>
     <app-catalog-sort></app-catalog-sort>
+    <app-catalog-filter></app-catalog-filter>
 
     <section class="catalog">
       <div class="catalog__wrapper container container-md container-lg">
@@ -46,12 +22,14 @@
 </template>
 
 <script>
-  import {useCatalogStore} from '../store/catalog';
+  import { useCatalogStore } from '../store/catalog';
+  import { useFilterStore } from '../store/filter';
   import AppCatalogItem  from '../components/catalog/AppCatalogItem.vue';
   import AppCatalogSearch  from '../components/catalog/AppCatalogSearch.vue';
   import AppCatalogSort  from '../components/catalog/AppCatalogSort.vue';
+  import AppCatalogFilter  from '../components/catalog/AppCatalogFilter.vue';
   import AppCartModal  from '../components/modals/AppCartModal.vue';
-  import {computed} from 'vue';
+  import { computed } from 'vue';
 
 export default {
   components: {
@@ -59,18 +37,24 @@ export default {
     AppCartModal,
     AppCatalogSearch,
     AppCatalogSort,
+    AppCatalogFilter
   },
 
   setup() {
 
     const store = useCatalogStore();
+    const filterStore = useFilterStore();
     const sortedAndSearchCatalog = computed(() => store.sortedAndSearchCatalog);
     const searchProduct = computed(() => store.searchProduct);  
+    const filteredList = computed(() => filterStore.filteredList);  
+    console.log('filtername',filteredList)
+
 
     return{
       store,
       sortedAndSearchCatalog,
-      searchProduct
+      searchProduct,
+      filteredList
     }
   },
 }

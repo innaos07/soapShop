@@ -31,9 +31,7 @@ export const useCatalogStore = defineStore('catalog', {
             if(state.statusFilter.toLowerCase() === 'all' && !state.searchProduct.trim()) {
                 return state.products
             } else if(state.searchProduct.trim()) {
-
                 return state.products.filter(product => product.name.toLowerCase().includes(state.searchProduct.toLowerCase()));
-
             }
             else {
                 return state.products.filter(product => product.tags.toLowerCase().includes(state.statusFilter.toLowerCase()));
