@@ -9,7 +9,8 @@ export const useFilterStore = defineStore('filter', {
        return {
            checkedScentName: [],
            checkedScentCategory: [],
-
+           statusFilter: 'ALL',
+           searchProduct: '',
            isShowFilterCategory: false,
            isShowFilterName: false,
        }
@@ -28,6 +29,27 @@ export const useFilterStore = defineStore('filter', {
                         return true;
                     }
             })
+        },
+        sortedAndSearchCatalog(state) {
+            if(state.statusFilter.toLowerCase() === 'all' && !state.searchProduct.trim()) {
+                return this.filteredList;
+            } else if(state.searchProduct.trim() && state.statusFilter.toLowerCase() === 'all') {
+                return this.filteredList.filter(product => {
+                    return  product.name.toLowerCase().includes(state.searchProduct.toLowerCase())
+                 }); 
+                
+            } else if(state.statusFilter.toLowerCase() !== 'all'){
+                let sortedList =  this.filteredList.filter(product => {
+                    return product.tags.toLowerCase().includes(state.statusFilter.toLowerCase());
+                }); 
+
+                    if(state.searchProduct.trim()) {
+                        return sortedList.filter(product => {
+                            return  product.name.toLowerCase().includes(state.searchProduct.toLowerCase());
+                     }); 
+                }
+                return sortedList;
+            }
         },
         tagsList(state) {
             let tagsList;
@@ -49,16 +71,20 @@ export const useFilterStore = defineStore('filter', {
         }
     },
     actions: {
+        changeStatusFilter(filter) {
+            console.log(filter)
+            this.statusFilter = filter;
+        },
+        updateSearchInput(event) {
+            this.searchProduct = event.target.value;
+        },
         deleteTag(type, value) {
             if(type == 'name') {
                 this.checkedScentName = this.checkedScentName.filter(i=> i !== value);
             } else if(type == 'category') {
                 this.checkedScentCategory = this.checkedScentCategory.filter(i=> i !== value);
             }
-
-            
         },
-
         showFilterCategory() {
             this.isShowFilterCategory = !this.isShowFilterCategory;
             this.isShowFilterName = false;

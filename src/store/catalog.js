@@ -7,12 +7,9 @@ export const useCatalogStore = defineStore('catalog', {
     state: () => {
        return {
             products: products,
-            // users: [],
             isLoading: false,
             isDialogVisible: false,
             cart: [],
-            statusFilter: 'ALL',
-            searchProduct: '',
             isShowIngredients: false,
             isShowSortList: false,
        }
@@ -23,18 +20,6 @@ export const useCatalogStore = defineStore('catalog', {
                 return state.cart.reduce((ac, next)=> ac+ next.price * next.quantity, 0)                    
             } else {
                 return 0
-            }
-        },
-        sortedAndSearchCatalog(state) {
-            console.log('status',state.statusFilter, state.searchProduct)
-
-            if(state.statusFilter.toLowerCase() === 'all' && !state.searchProduct.trim()) {
-                return state.products
-            } else if(state.searchProduct.trim()) {
-                return state.products.filter(product => product.name.toLowerCase().includes(state.searchProduct.toLowerCase()));
-            }
-            else {
-                return state.products.filter(product => product.tags.toLowerCase().includes(state.statusFilter.toLowerCase()));
             }
         },
         productItem(state) {
@@ -52,8 +37,6 @@ export const useCatalogStore = defineStore('catalog', {
                 })
                 console.log('tags', tags)
                 return state.products.filter((product) => product.tags === tags).slice(0,3)
-                
-            
             }
         },
 
@@ -65,16 +48,7 @@ export const useCatalogStore = defineStore('catalog', {
 
     },
     actions: {
-        // async fetchUsers() {
-        //     try {
-        //         this.loading = true;
-        //         const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-        //         this.users = response.data;
-        //     } catch(e){
-        //         console.log(e)
-        //     } finally {
-        //         this.loading = false;
-        // }
+      
         
         showBasketModal() {
             this.isDialogVisible = !this.isDialogVisible;
@@ -108,13 +82,7 @@ export const useCatalogStore = defineStore('catalog', {
                 }
             })
         },
-        changeStatusFilter(filter) {
-            console.log(filter)
-            this.statusFilter = filter;
-        },
-        updateSearchInput(event) {
-            this.searchProduct = event.target.value;
-        },
+     
         incrementProduct(id) {
             this.products.map((item) => {
                 if(item.id == id) {

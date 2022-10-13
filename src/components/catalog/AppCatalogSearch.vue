@@ -6,7 +6,7 @@
           class="search__input"
           placeholder="Search..." 
           :value="searchProduct" 
-          @input="store.updateSearchInput"
+          @input="filterStore.updateSearchInput"
         />
       </div>
    </div>
@@ -14,17 +14,20 @@
 </template>
 
 <script>
-  import {useCatalogStore} from '../../store/catalog';
+  // import {useCatalogStore} from '../../store/catalog';
+  import { useFilterStore } from '../../store/filter';
+
   import {computed} from 'vue';
 
 export default {
   setup() {
 
-    const store = useCatalogStore();
-    const searchProduct = computed(() => store.searchProduct);  
+    const filterStore = useFilterStore();
+    
+    const searchProduct = computed(() => filterStore.searchProduct);  
 
     return{
-      store,
+      filterStore,
       searchProduct
     }
   },

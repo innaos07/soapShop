@@ -44,7 +44,7 @@ export default {
 
     const store = useCatalogStore();
     const filterStore = useFilterStore();
-    const sortedAndSearchCatalog = computed(() => store.sortedAndSearchCatalog);
+    const sortedAndSearchCatalog = computed(() => filterStore.sortedAndSearchCatalog);
     const searchProduct = computed(() => store.searchProduct);  
     const filteredList = computed(() => filterStore.filteredList);  
     console.log('filtername',filteredList)

@@ -5,7 +5,7 @@
         <div  class="catalog-sort__item col-12 col-sm-3"
           v-for="item in sortedList"
           :key="item.name"
-          @click="store.changeStatusFilter(item.status)">
+          @click="filterStore.changeStatusFilter(item.status)">
           {{item.name}}
         </div> 
       </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import {useCatalogStore} from '../../store/catalog';
+  import { useFilterStore } from '../../store/filter';
 
 export default {
  setup() {
@@ -41,10 +41,10 @@ export default {
       },
     ];
 
-    const store = useCatalogStore();
+    const filterStore = useFilterStore();
 
     return {
-      store,
+      filterStore,
       sortedList,
     }
   }
@@ -74,6 +74,7 @@ export default {
       opacity: 0.5;
     }
 
+
     @media (max-width: $sm-width) { 
       margin-bottom: 10px;
 
@@ -81,6 +82,9 @@ export default {
         margin-bottom: 0;
       }
     }
+  }
+  .catalog-sort__item--active {
+    
   }
 }
 
